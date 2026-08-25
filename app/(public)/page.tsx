@@ -119,6 +119,22 @@ your move online.
 <HeroEstimateForm />
 </div>
 </section>
+
+  <section className="border-b border-neutral-200 bg-neutral-50">
+  <div className="container-page py-16">
+  <h2 className="section-title text-center">How It Works</h2>
+  <p className="section-subtitle mx-auto max-w-2xl text-center">
+  From estimate to move-in day, every step happens in one place.
+  </p>
+  <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+    {HOW_IT_WORKS.map((item) => (
+  <Card key={item.step}>
+  <p className="text-sm font-semibold text-brand-600">Step {item.step}</p>
+  <p className="mt-2 text-lg font-semibold text-neutral-900">{item.title}</p>
+  <p className="helper-text mt-2">{item.description}</p>
+  </Card>
+  ))}
+  </div></section>
 </>
 );
 }
