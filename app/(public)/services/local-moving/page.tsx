@@ -201,6 +201,22 @@ export default function LocalMovingPage() {
         </p>
         </div>
       </section>
+      <section className="bg-white">
+      <div className="container-page py-16">
+      <h2 className="section-title text-center">Local moving FAQs</h2>
+      <div className="mx-auto mt-10 max-w-2xl divide-y divide-neutral-200">
+        {FAQS.map((faq) => (
+      <details key={faq.question} className="py-4">
+      <summary className="cursor-pointer text-base font-medium text-neutral-900">
+        {faq.question}
+      </summary>
+        <p className="helper-text mt-2">{faq.answer}</p>
+      </details>
+      ))}
+      </div>
+      </div>
+        
+      </section>
     </>
     );
 }
