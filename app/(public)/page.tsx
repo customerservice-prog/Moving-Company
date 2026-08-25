@@ -135,6 +135,20 @@ your move online.
   </Card>
   ))}
   </div></section>
+
+    <section className="border-b border-neutral-200 bg-white">
+    <div className="container-page py-16">
+    <h2 className="section-title text-center">Services</h2>
+    <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      {SERVICES.map((service) => (
+  <Link key={service.href} href={service.href} className="block">
+  <Card className="h-full hover:border-neutral-300">
+  <p className="text-lg font-semibold text-neutral-900">{service.title}</p>
+  <p className="helper-text mt-2">{service.description}</p>
+  </Card>
+  </Link>
+  ))}
+    </div></section>
 </>
 );
 }
