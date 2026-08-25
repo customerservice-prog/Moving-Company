@@ -52,7 +52,7 @@ input: MoveEstimateInput
 ): MoveEstimateResult {
   const baseHours = BASE_HOURS_BY_MOVE_TYPE[input.moveType] ?? 3;
 const crewSize = RECOMMENDED_CREW_BY_MOVE_TYPE[input.moveType] ?? 2;
-const hourlyRate = CREW_HOURLY_RATES[crewSize] ?? CREW_HOURLY_RATES[2];
+const hourlyRate = CREW_HOURLY_RATES[crewSize] ?? CREW_HOURLY_RATES[2]!;
 
 const inventoryAdjustmentHours = Math.min(input.inventoryItemCount / 20, 3);
 
