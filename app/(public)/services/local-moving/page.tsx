@@ -84,3 +84,40 @@ const FAQS = [
 const RELATED_SERVICES = [
   { href: "/services/apartment-moving", title: "Apartment Moving" },
   ];
+export default function LocalMovingPage() {
+  return (
+    <>
+    
+    <section className="border-b border-neutral-200 bg-white">
+    <div className="container-page py-16 lg:py-20">
+    <p className="text-sm font-medium text-brand-600">Local Moving</p>
+    
+    <h1 className="mt-2 max-w-2xl text-3xl font-semibold tracking-tight text-neutral-900 sm:text-4xl lg:text-5xl">
+    Local moving across Syracuse & Central New York
+    </h1>
+
+      <p className="mt-4 max-w-2xl text-lg text-neutral-600">
+      Moving across town should not mean a full day of stress. Our local
+      crews handle the loading, driving, and unloading so you can focus on
+      settling into your new place.
+      </p>
+    
+    <div className="mt-8 flex flex-wrap gap-4">
+    <Link
+      href="/quote"
+      className="inline-flex h-12 items-center justify-center rounded-lg bg-brand-600 px-6 text-base font-medium text-white hover:bg-brand-700"
+      >
+    Get My Price
+    
+    </Link>
+    <a
+      href="tel:+13155550100"
+      className="inline-flex h-12 items-center justify-center rounded-lg border border-neutral-300 px-6 text-base font-medium text-neutral-900 hover:bg-neutral-50"
+      >
+    Call (315) 555-0100
+    
+    </a>
+    </div>
+    </div>
+    </section>
+    </>
