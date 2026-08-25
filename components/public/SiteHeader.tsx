@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import { cn } from "@/lib/utils/cn";
@@ -26,9 +27,16 @@ const [menuOpen, setMenuOpen] = useState(false);
 return (
 <header className="sticky top-0 z-40 border-b border-neutral-200 bg-white/95 backdrop-blur">
 <div className="container-page flex h-16 items-center justify-between">
-<Link href="/" className="text-lg font-semibold text-neutral-900">
-Moving Company
-</Link>
+<Link href="/" className="flex items-center gap-2" aria-label="Move315 home">
+            <Image
+              src="/brand/move315-logo.png"
+              alt="Move315 - Moving Made Simple"
+              width={160}
+              height={160}
+              priority
+              className="h-12 w-auto"
+            />
+          </Link>
 
 <nav className="hidden items-center gap-6 lg:flex">
 {NAV_LINKS.map((link) => (
