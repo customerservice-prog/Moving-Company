@@ -134,7 +134,7 @@ your move online.
   <p className="helper-text mt-2">{item.description}</p>
   </Card>
   ))}
-  </div></section>
+      </div></div></section>
 
     <section className="border-b border-neutral-200 bg-white">
     <div className="container-page py-16">
@@ -148,7 +148,7 @@ your move online.
   </Card>
   </Link>
   ))}
-    </div></section>
+    </div></div></section>
 
       <section className="border-b border-neutral-200 bg-neutral-50">
         <div className="container-page py-16">
