@@ -34,3 +34,26 @@ description:
 const PROCESS = [
 {
 step: "1",
+title: "Get your estimate",
+  description:
+    "Tell us your two addresses, move date, and rough inventory to see an estimated price range.",
+},
+  {
+    step: "2",
+    title: "Reserve your crew",
+    description:
+      "Pick your date and reserve online with a deposit to lock in your crew and truck.",
+  },
+  {
+    step: "3",
+    title: "Moving day",
+    description:
+      "Your crew arrives on time, protects your furniture and floors, and loads efficiently.",
+  },
+  {
+    step: "4",
+    title: "Unload & settle in",
+    description:
+      "We unload, place furniture where you want it, and confirm everything arrived safely.",
+  },
+  ];
