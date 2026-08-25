@@ -148,3 +148,7 @@ export default function LocalMovingPage() {
     </div>
     </section>
 
+
+    </>
+    );
+}
