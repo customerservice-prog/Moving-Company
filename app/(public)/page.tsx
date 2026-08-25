@@ -178,6 +178,23 @@ your move online.
       </div>
       </div>
       </section>
-    </>
+
+      <section className="bg-brand-600">
+      <div className="container-page py-16 text-center">
+      <h2 className="text-2xl font-semibold text-white sm:text-3xl">
+      Ready to see your price?
+      </h2>
+      <p className="mt-2 text-brand-50">
+      Get an estimated price range in minutes. No obligation.
+</p> 
+      <Link
+        href="/quote"
+        className="mt-6 inline-flex h-14 items-center justify-center rounded-lg bg-white px-8 text-base font-medium text-brand-600 hover:bg-brand-50"
+        >
+      Get My Price
+        </Link>
+</div>
+</section>
+      </>
     );
     }
