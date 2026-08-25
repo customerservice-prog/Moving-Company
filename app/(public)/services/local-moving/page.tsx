@@ -120,4 +120,14 @@ export default function LocalMovingPage() {
     </div>
     </div>
     </section>
+    
+    <section className="border-b border-neutral-200 bg-neutral-50">
+    <div className="container-page py-16">
+    
+    <div className="flex aspect-[16/6] w-full items-center justify-center rounded-xl border border-dashed border-neutral-300 bg-white text-center text-sm text-neutral-500">
+    [REAL PHOTO GOES HERE: local crew loading a moving truck in Syracuse]
+
+    </div>
+    </div>
+    </section>
     </>
