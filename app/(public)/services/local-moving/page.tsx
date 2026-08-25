@@ -246,6 +246,7 @@ export default function LocalMovingPage() {
         >
       Get My Price
       </Link>
+      </div>
       </section>
     </>
     );
