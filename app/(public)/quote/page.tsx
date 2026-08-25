@@ -68,7 +68,7 @@ function QuoteWizard() {
     window.localStorage.setItem(QUOTE_WIZARD_STORAGE_KEY, JSON.stringify(state));
   }, [state, hydrated]);
 
-  const currentStep = QUOTE_STEPS[stepIndex];
+  const currentStep = QUOTE_STEPS[stepIndex] ?? QUOTE_STEPS[0];
   const canGoNext = isStepComplete(currentStep.key, state);
   const isLastStep = stepIndex === QUOTE_STEPS.length - 1;
 
