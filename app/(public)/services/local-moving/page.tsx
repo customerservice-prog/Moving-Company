@@ -184,6 +184,21 @@ export default function LocalMovingPage() {
           <p className="mt-2 text-2xl font-semibold text-neutral-900">$400&ndash;$650*</p>
         <p className="helper-text mt-2">2 movers, roughly 3&ndash;4 hours</p>
         </Card>
+          <Card className="text-center">
+          <p className="text-sm font-medium text-brand-600">2&ndash;3 Bedroom</p>
+          <p className="mt-2 text-2xl font-semibold text-neutral-900">$700&ndash;$1,100*</p>
+          <p className="helper-text mt-2">3 movers, roughly 4&ndash;6 hours</p>
+            </Card>
+          
+          <Card className="text-center">
+          <p className="text-sm font-medium text-brand-600">4+ Bedroom</p>
+          <p className="mt-2 text-2xl font-semibold text-neutral-900">$1,200&ndash;$1,800*</p>
+          <p className="helper-text mt-2">4+ movers, roughly 6&ndash;8 hours</p>
+          </Card>
+        </div>
+        <p className="mt-4 text-center text-xs text-neutral-400">
+        *Demo pricing for development purposes only. Not a real quote.
+        </p>
         </div>
       </section>
     </>
