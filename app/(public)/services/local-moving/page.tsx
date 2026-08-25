@@ -130,4 +130,21 @@ export default function LocalMovingPage() {
     </div>
     </div>
     </section>
-    </>
+    
+    <section className="border-b border-neutral-200 bg-white">
+    <div className="container-page py-16">
+    <h2 className="section-title text-center">Why choose us for a local move</h2>
+    
+    <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+      {BENEFITS.map((benefit) => (
+      <Card key={benefit.title} className="h-full">
+
+      <p className="text-lg font-semibold text-neutral-900">{benefit.title}</p>
+      <p className="helper-text mt-2">{benefit.description}</p>
+      
+      </Card>
+      ))}
+    </div>
+    </div>
+    </section>
+
