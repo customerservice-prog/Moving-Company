@@ -1,0 +1,47 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    color-scheme: light;
+  }
+
+  body {
+    @apply bg-white text-neutral-900 antialiased;
+  }
+
+  h1, h2, h3, h4 {
+    @apply font-semibold tracking-tight text-neutral-900;
+  }
+
+  a {
+    @apply text-brand-600;
+  }
+}
+
+@layer components {
+  .container-page {
+    @apply mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8;
+  }
+
+  .section-title {
+    @apply text-2xl font-semibold text-neutral-900 sm:text-3xl;
+  }
+
+  .section-subtitle {
+    @apply mt-2 text-base text-neutral-600;
+  }
+
+  .label-text {
+    @apply text-sm font-medium text-neutral-700;
+  }
+
+  .helper-text {
+    @apply text-sm text-neutral-500;
+  }
+
+  .metadata-text {
+    @apply text-xs uppercase tracking-wide text-neutral-400;
+  }
+}
