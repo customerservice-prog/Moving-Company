@@ -217,6 +217,23 @@ export default function LocalMovingPage() {
       </div>
         
       </section>
+      <section className="border-t border-neutral-200 bg-neutral-50">
+      <div className="container-page py-16">
+      <h2 className="section-title text-center">Related services</h2>
+      <div className="mt-10 grid gap-6 sm:grid-cols-3">
+        {RELATED_SERVICES.map((service) => (
+      <Link
+        key={service.href}
+        href={service.href}
+        className="block rounded-xl border border-neutral-200 bg-white p-6 text-center font-medium text-neutral-900 hover:border-neutral-300"
+        >
+        {service.title}
+      </Link>
+      ))}
+      </div>
+      </div>
+        
+      </section>
     </>
     );
 }
