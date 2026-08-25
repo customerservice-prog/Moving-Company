@@ -1,0 +1,172 @@
+// Prisma schema for the Moving Company platform.
+// Phase 1 scope: core models needed for the quote engine and a minimal admin view.
+// Additional models (Employee scheduling, Trucks, Payments, Documents, Claims, etc.)
+// will be added in later phases so they can attach cleanly to this foundation.
+
+generator client {
+provider = "prisma-client-js"
+}
+
+datasource db {
+provider = "postgresql"
+url = env("DATABASE_URL")
+}
+
+enum UserRole {
+ADMIN
+OFFICE
+MANAGER
+MOVER
+CUSTOMER
+}
+
+enum MoveType {
+STUDIO
+ONE_BEDROOM
+TWO_BEDROOM
+THREE_BEDROOM
+FOUR_BEDROOM
+FIVE_PLUS_BEDROOM
+PARTIAL_MOVE
+STORAGE
+OFFICE
+SINGLE_ITEM
+LABOR_ONLY
+}
+
+enum MoveStatus {
+DRAFT
+ESTIMATE_CREATED
+ESTIMATE_REVIEW
+QUOTE_VERIFIED
+BOOKING_PENDING
+BOOKED
+CREW_ASSIGNED
+EN_ROUTE
+ARRIVED
+LOADING
+IN_TRANSIT
+UNLOADING
+COMPLETED
+CANCELLED
+}
+
+enum AddressRole {
+ORIGIN
+DESTINATION
+}
+
+model User {
+id String @id @default(cuid())
+email String @unique
+name String?
+passwordHash String?
+role UserRole @default(CUSTOMER)
+customer Customer?
+employee Employee?
+createdAt DateTime @default(now())
+updatedAt DateTime @updatedAt
+}
+
+model Customer {
+id String @id @default(cuid())
+userId String? @unique
+user User? @relation(fields: [userId], references: [id])
+firstName String
+lastName String
+email String @unique
+phone String
+moves Move[]
+createdAt DateTime @default(now())
+updatedAt DateTime @updatedAt
+}
+
+model Employee {
+id String @id @default(cuid())
+userId String? @unique
+user User? @relation(fields: [userId], references: [id])
+firstName String
+lastName String
+phone String
+email String @unique
+active Boolean @default(true)
+createdAt DateTime @default(now())
+updatedAt DateTime @updatedAt
+}
+
+model Move {
+id String @id @default(cuid())
+publicId String @unique @default(cuid())
+customerId String
+customer Customer @relation(fields: [customerId], references: [id])
+status MoveStatus @default(DRAFT)
+moveType MoveType
+movingDate DateTime?
+arrivalWindowStart DateTime?
+arrivalWindowEnd DateTime?
+estimatedDurationMinutes Int?
+estimatedPriceLow Int?
+estimatedPriceHigh Int?
+finalPrice Int?
+depositAmount Int?
+notes String?
+addresses MoveAddress[]
+inventoryItems MoveInventoryItem[]
+estimates MoveEstimate[]
+createdAt DateTime @default(now())
+updatedAt DateTime @updatedAt
+}
+
+model MoveAddress {
+id String @id @default(cuid())
+moveId String
+move Move @relation(fields: [moveId], references: [id])
+role AddressRole
+addressLine1 String
+addressLine2 String?
+city String
+state String
+postalCode String
+propertyType String?
+floor Int?
+hasElevator Boolean @default(false)
+hasStairs Boolean @default(false)
+longCarry Boolean @default(false)
+parkingNotes String?
+createdAt DateTime @default(now())
+}
+
+model InventoryCatalogItem {
+id String @id @default(cuid())
+name String @unique
+category String
+defaultCubicFeet Float?
+requiresReview Boolean @default(false)
+moveInventoryItems MoveInventoryItem[]
+}
+
+model MoveInventoryItem {
+id String @id @default(cuid())
+moveId String
+move Move @relation(fields: [moveId], references: [id])
+catalogItemId String?
+catalogItem InventoryCatalogItem? @relation(fields: [catalogItemId], references: [id])
+customName String?
+room String
+quantity Int @default(1)
+needsReview Boolean @default(false)
+createdAt DateTime @default(now())
+}
+
+model MoveEstimate {
+id String @id @default(cuid())
+moveId String
+move Move @relation(fields: [moveId], references: [id])
+priceLow Int
+priceHigh Int
+recommendedCrewSize Int
+recommendedTrucks Int
+estimatedDurationMinutes Int
+isDemoPricing Boolean @default(true)
+createdAt DateTime @default(now())
+}
