@@ -57,3 +57,30 @@ title: "Get your estimate",
       "We unload, place furniture where you want it, and confirm everything arrived safely.",
   },
   ];
+
+const FAQS = [
+  {
+    question: "How is a local move priced?",
+    answer:
+      "Local moves are typically priced by the hour, based on the number of movers and truck size your move needs.",
+  },
+  {
+    question: "How far in advance should I book?",
+    answer:
+      "We recommend booking as soon as you have a move date, especially near the end of the month.",
+  },
+  {
+    question: "Do you move within apartments and buildings with stairs or elevators?",
+    answer:
+      "Yes. Let us know about stairs, elevators, and parking in your estimate so we can plan the right crew size.",
+  },
+  {
+    question: "What should I do before the crew arrives?",
+    answer:
+      "Clear walkways, set aside anything you are taking yourself, and make sure boxes are labeled.",
+  },
+  ];
+
+const RELATED_SERVICES = [
+  { href: "/services/apartment-moving", title: "Apartment Moving" },
+  ];
