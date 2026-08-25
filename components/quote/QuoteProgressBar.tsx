@@ -14,7 +14,7 @@ interface QuoteProgressBarProps {
  */
 export function QuoteProgressBar({ currentStepIndex }: QuoteProgressBarProps) {
   const total = QUOTE_STEPS.length;
-  const current = QUOTE_STEPS[currentStepIndex];
+  const current = QUOTE_STEPS[currentStepIndex] ?? QUOTE_STEPS[0]!;
   const percent = Math.round(((currentStepIndex + 1) / total) * 100);
 
   return (
