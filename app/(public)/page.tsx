@@ -149,6 +149,19 @@ your move online.
   </Link>
   ))}
     </div></section>
+
+      <section className="border-b border-neutral-200 bg-neutral-50">
+        <div className="container-page py-16">
+          <h2 className="section-title text-center">Why We&apos;re Different</h2>
+        <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {WHY_DIFFERENT.map((item) => (
+  <div key={item.title}>
+  <p className="text-lg font-semibold text-neutral-900">{item.title}</p>
+  <p className="helper-text mt-2">{item.description}</p>
+  </div>
+  ))}
+        </div>
+        </div></section>
 </>
 );
 }
