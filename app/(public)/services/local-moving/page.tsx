@@ -169,6 +169,23 @@ export default function LocalMovingPage() {
       </div>
       </div>
       </section>
+      <section className="border-b border-neutral-200 bg-white">
+      <div className="container-page py-16">
+      <h2 className="section-title text-center">Local moving pricing</h2>
+      <p className="mt-4 max-w-2xl mx-auto text-center helper-text">
+      Local moves are generally priced by crew hours plus a truck fee. The
+      example below is illustrative demo pricing and does not reflect final
+      rates. Your online estimate will show a real range based on your
+      details.
+      </p>
+        <div className="mt-10 grid gap-6 sm:grid-cols-3">
+        <Card className="text-center">
+        <p className="text-sm font-medium text-brand-600">Studio / 1 Bedroom</p>
+          <p className="mt-2 text-2xl font-semibold text-neutral-900">$400&ndash;$650*</p>
+        <p className="helper-text mt-2">2 movers, roughly 3&ndash;4 hours</p>
+        </Card>
+        </div>
+      </section>
     </>
     );
 }
